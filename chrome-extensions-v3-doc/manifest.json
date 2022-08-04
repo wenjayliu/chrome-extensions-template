@@ -1,0 +1,39 @@
+{
+  "name": "插件doc",
+  "description": "插件的官方文档版本!",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/images/facex.png",
+      "32": "/images/facex.png",
+      "48": "/images/facex.png",
+      "128": "/images/facex.png"
+    }
+  },
+  "icons": {
+    "16": "/images/creative.png",
+    "32": "/images/creative.png",
+    "48": "/images/creative.png",
+    "128": "/images/creative.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://cn.bing.com/*"],
+      "js": ["content-scripts.js"],
+      "css": ["content.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["inject.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

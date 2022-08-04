@@ -1,0 +1,11 @@
+.test_container_layout {
+    position: fixed;
+    bottom: 5px;
+    left: 30px;
+    width: 600px;
+    height: 80px;
+    padding: 10px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    z-index: 999;
+}

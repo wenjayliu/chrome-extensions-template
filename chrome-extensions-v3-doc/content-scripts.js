@@ -4,8 +4,10 @@
  * 只能访问 extension、runtime等部分API	可以访问DOM	不可以js	不可以跨域
  * 多用于js间的通信
  */
+// import test from './utils/test.js' // Cannot use import statement outside a module (at content-scripts.js:8:1)
 console.log('加载content-scripts.js')
 
+/******************************************************************可公共抽离的函数 */
 /**
  * 异步等待某个值
  * @param {Function} prepare   监听函数
@@ -73,7 +75,9 @@ async function injectCustomJs(jsPath) {
   await waitStart(() => document.head, 50)
   document.head.appendChild(temp)
 }
+/******************************************************************可公共抽离的函数end */
 
+injectCustomJs('utils/AP.js') // 引入的文件需要加权限（web_accessible_resources）
 injectCustomJs('inject.js') // 引入的文件需要加权限（web_accessible_resources）
 
 function askBg(params) {

@@ -39,6 +39,10 @@
   // 测试获取生成的元素
   console.log('operateDom', testContainerDom)
 
+  /**
+   * 生成弹框和按钮
+   * @param {*} data 
+   */
   function updateTestContainerDom(data) {
     testContainerDom.innerHTML = `<div class="test_container_layout">
       <div id="tc_in">
@@ -51,10 +55,12 @@
 
   updateTestContainerDom()
 
+  // 通知content
   clickHanlde('askContent', () => {
     window.postMessage({ type: 'rawData' }, '*')
   })
-
+  
+  // 通知content + 通知bg
   clickHanlde('askBg', () => {
     window.postMessage({ type: 'tobg' }, '*')
   })

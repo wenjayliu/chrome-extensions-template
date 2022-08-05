@@ -7,3 +7,8 @@
 content_scripts[].matches
 `"matches": ["<all_urls>"]` 所有域名生效
 `"matches": ["https://cn.bing.com/*"]` 域名内所有地址生效
+
+
+## 原生JS缺陷
+1. 无法模块化导致的问题
+2. content.js 无法访问window对象（无法使用公共模块）

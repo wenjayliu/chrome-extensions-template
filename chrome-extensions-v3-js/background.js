@@ -20,7 +20,7 @@ chrome.runtime.onMessage.addListener(function (data, sender, sendResponse) {
   if (data.type === 'tobg') {
     res = {
       code: 200,
-      data: 'ok',
+      data: 'up form background.js',
     }
   }
   sendResponse(res)

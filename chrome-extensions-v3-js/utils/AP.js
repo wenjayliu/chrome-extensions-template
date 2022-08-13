@@ -12,6 +12,10 @@
 })(this, function () {
   'use strict'
   console.log('init-AP')
+  /**
+   * 初始化一个公共类
+   * @param {*} options 
+   */
   function AP(options) {
     if (!(this instanceof AP)) {
       warn('AP is a constructor and should be called with the `new` keyword')

@@ -49,6 +49,7 @@
         <h3>来自inject.js</h3>
         <button id="askContent">通知content</button>
         <button id="askBg">通知content + 通知bg</button>
+        <button id="askBg">发送一个请求</button>
       </div>
     </div>`
   }
@@ -63,5 +64,11 @@
   // 通知content + 通知bg
   clickHanlde('askBg', () => {
     window.postMessage({ type: 'tobg' }, '*')
+  })
+
+  window.addEventListener('message', async (event) => {
+    console.group('inject-收到一个postMessage')
+    console.log('event', event)
+    console.groupEnd()
   })
 })()

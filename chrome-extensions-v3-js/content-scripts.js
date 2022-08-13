@@ -80,9 +80,12 @@ async function injectCustomJs(jsPath) {
 injectCustomJs('utils/AP.js') // 引入的文件需要加权限（web_accessible_resources）
 injectCustomJs('inject.js') // 引入的文件需要加权限（web_accessible_resources）
 
+
+
 function askBg(params) {
   chrome.runtime.sendMessage(params, (res) => {
     console.log('sendMessage返回值 ', res)
+    window.postMessage({ type: 'askBgBack' }, '*')
   })
 }
 

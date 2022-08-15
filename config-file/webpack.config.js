@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const path = require('path')
 const ejs = require('ejs');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyESPlugin = require('uglifyjs-webpack-plugin');
@@ -6,7 +7,6 @@ const CopyPlugin = require('copy-webpack-plugin');
 const ExtensionReloader = require('webpack-extension-reloader');
 const { VueLoaderPlugin } = require('vue-loader');
 const { version } = require('./package.json');
-const path = require('path')
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }

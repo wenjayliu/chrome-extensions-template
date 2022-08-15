@@ -1,0 +1,24 @@
+{
+  "name": "插件webpack版",
+  "description": "使用webpack打包插件的一个模板项目!",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://cn.bing.com/*"],
+      "js": ["js/content-scripts.js"],
+      "css": ["content.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["js/inject.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

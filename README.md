@@ -1,13 +1,17 @@
 # 谷歌插件开发模板
-使用不同的方式开发chrome插件。
+
+使用不同的方式开发 chrome 插件。
 
 ## 使用插件
+
 - chrome 浏览器地址栏输入 `chrome://extensions`
 - 进入插件管理页面后点击右上角的 `开发者模式` 滑块
-- 点击按钮 `加载已解压的扩展程序` 将子文件夹导入。
+- 点击按钮 `加载已解压的扩展程序` 将子文件夹导入（如果是打包项目添加dist文件夹）。
 
-## 一个简单的hello word 插件
-新建一个JSON文件manifest.json 输入以下配置：
+## 一个简单的 hello word 插件
+
+新建一个 JSON 文件 manifest.json 输入以下配置：
+
 ```json
 {
   "name": "插件doc",
@@ -16,8 +20,11 @@
   "manifest_version": 3
 }
 ```
-## 插件采用3.0版本
+
+## 插件采用 3.0 版本
+
 注意配置文件`manifest.json`的升级：
+
 1. `background` 采用了 service worker
 
 ```json

@@ -1,5 +1,5 @@
 {
-  "name": "插件webpack版",
+  "name": "webpack版谷歌插件",
   "description": "使用webpack打包插件的一个模板项目!",
   "version": "1.0.0",
   "manifest_version": 3,
@@ -10,8 +10,7 @@
   "content_scripts": [
     {
       "matches": ["https://cn.bing.com/*"],
-      "js": ["js/content-scripts.js"],
-      "css": ["content.css"],
+      "js": ["js/content.js"],
       "run_at": "document_start"
     }
   ],

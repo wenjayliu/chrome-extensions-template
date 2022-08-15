@@ -1,6 +1,6 @@
 {
   "name": "chrome-extensions-v3-webpack",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "谷歌插件webpack版本",
   "main": "index.js",
   "dependencies": {},

@@ -4,7 +4,6 @@ import { injectCustomJs } from './utils/index'
 
 injectCustomJs('js/inject.js')
 
-
 function askBackground(params) {
   chrome.runtime.sendMessage(params, (res) => {
     window.postMessage(res, '*')
@@ -12,14 +11,15 @@ function askBackground(params) {
 }
 
 window.addEventListener('message', async (event) => {
-  console.group('收到一个postMessage')
+  console.group('收到一个postMessage2')
   console.log('内容', event)
+  console.groupEnd()
   const { data } = event
-
-  // 通知bg(background.js)
-  if (data.responseId === '') {
-    askBackground(data)
+  if (data.type === 'unidirectionFetch') {
+      chrome.runtime.sendMessage(data)
   }
 
-  console.groupEnd()
+  if (data.type === 'fetch') {
+    // askBackground(data)
+  }
 })
